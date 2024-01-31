@@ -1,10 +1,3 @@
-/*
-
-Tooplate 2117 Infinite Loop
-
-https://www.tooplate.com/view/2117-infinite-loop
-
-*/
 
 @import url("https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900");
 
@@ -40,8 +33,11 @@ a:focus {
 }
 
 blockquote {
-  font-size: 0.86em;
+  padding-top: 10px;
+  font-size: 1.35rem;
   line-height: 1.8em;
+  font-family: serif;
+  text-align: center;
 }
 
 .tm-section-pad-top {
@@ -121,6 +117,7 @@ blockquote {
 .tm-nav-link:hover {
   color: #FFF;
   background-color: #369;
+  padding: auto;
 }
 
 .navbar-toggler {
@@ -198,10 +195,12 @@ blockquote {
 .tm-hero-title {
   font-size: 3.5rem;
   text-shadow: 2px 2px 2px #333;
+  font-family: serif;
 }
 
 .tm-hero-subtitle {
   text-shadow: 2px 2px 2px #333;
+  font-family: serif;
 }
 
 .tm-intro-next {
@@ -265,6 +264,61 @@ blockquote {
 	padding: 20px 0 30px 0;
 }
 
+/* Why-us */
+.container {
+  padding-top: 40px; /* Double the original padding-top */
+  padding-bottom: 80px; /* Double the original padding-bottom */
+}
+
+.why-us .box {
+  padding: 100px 30px; /* Double the original padding-top */
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.2); /* Adjusted box-shadow */
+  transition: all ease-in-out 0.3s;
+}
+
+.why-us .box span {
+  display: block;
+  font-size: 36px; /* Increased font size */
+  font-weight: 700;
+  color: #357;
+}
+
+.why-us .box h4 {
+  font-size: 30px; /* Increased font size */
+  font-weight: 600;
+  padding: 0;
+  margin: 30px 0; /* Increased margin */
+  color: #2a2a2a;
+}
+
+.why-us .box p {
+  color: #020202;
+  font-size: 18px; /* Increased font size */
+  margin: 0;
+  padding: 0;
+}
+.why-us .box li {
+  color: #020202;
+}
+
+.why-us .box:hover {
+  background: #357;
+  padding: 60px 30px 140px 30px; /* Adjusted padding */
+  box-shadow: 15px 20px 40px rgba(0, 0, 0, 0.3); /* Adjusted box-shadow */
+}
+
+.why-us .box:hover span,
+.why-us .box:hover h4,
+.why-us .box:hover p {
+  color: #fff
+}
+.why-us .box:hover li {
+  color:#fff
+}
+
+
+
+
 /* Testimonials */
 #testimonials {
   color: white;
@@ -315,9 +369,10 @@ blockquote {
 }
 
 .tm-testimonial-item figcaption {
-  text-align: right;
-  font-style: italic;
-  font-size: 1.1rem;
+  text-align: center;
+  font-style:inherit;
+  font-size: 1.45rem;
+  font-family: Georgia;
 }
 
 /* Work */
@@ -326,15 +381,6 @@ blockquote {
   max-width: 650px;
   width: 100%;
   font-size: 0.9rem;
-}
-
-.tm-gallery-container {
-  padding-top: 70px;
-  padding-bottom: 120px;
-}
-
-.tm-gallery-item {
-  margin: 0 15px;
 }
 
 .slick-dots {
@@ -370,145 +416,6 @@ blockquote {
 
 /* Hover Effect */
 /* Common style */
-.grid figure {
-  position: relative;
-  float: left;
-  overflow: hidden;
-  background: #3085a3;
-  text-align: center;
-  cursor: pointer;
-}
-
-.grid figure img {
-  position: relative;
-  display: block;
-  min-height: 100%;
-  max-width: 100%;
-  opacity: 0.8;
-}
-
-.grid figure figcaption {
-  padding: 2em;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 1.25em;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.grid figure figcaption::before,
-.grid figure figcaption::after {
-  pointer-events: none;
-}
-
-.grid figure figcaption,
-.grid figure figcaption > a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* Anchor will cover the whole item by default */
-/* For some effects it will show as a button */
-.grid figure figcaption > a {
-  z-index: 1000;
-  text-indent: 200%;
-  white-space: nowrap;
-  font-size: 0;
-  opacity: 0;
-}
-
-.grid figure h2 {
-  word-spacing: -0.15em;
-  font-size: 0.9em;
-  font-weight: 300;
-}
-
-.grid figure h2 span {
-  font-weight: 600;
-}
-
-.grid figure h2,
-.grid figure p {
-  margin: 0;
-}
-
-.grid figure p {
-  letter-spacing: 1px;
-  font-size: 68.5%;
-}
-
-/*---------------*/
-/***** Honey *****/
-/*---------------*/
-
-figure.effect-honey {
-  background: #4a3753;
-  max-width: 220px;
-}
-
-figure.effect-honey img {
-  opacity: 1;
-  -webkit-transition: opacity 0.35s;
-  transition: opacity 0.35s;
-}
-
-figure.effect-honey:hover img {
-  opacity: 0.4;
-}
-
-figure.effect-honey figcaption::before {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 10px;
-  background: #38C;
-  content: "";
-  -webkit-transform: translate3d(0, 10px, 0);
-  transform: translate3d(0, 10px, 0);
-}
-
-figure.effect-honey h2 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 1em 1.5em;
-  width: 100%;
-  text-align: left;
-  -webkit-transform: translate3d(0, -30px, 0);
-  transform: translate3d(0, -30px, 0);
-}
-
-figure.effect-honey h2 i {
-  font-style: normal;
-  opacity: 0;
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(0, -30px, 0);
-  transform: translate3d(0, -30px, 0);
-}
-
-figure.effect-honey figcaption::before,
-figure.effect-honey h2 {
-  -webkit-transition: -webkit-transform 0.35s;
-  transition: transform 0.35s;
-}
-
-figure.effect-honey:hover figcaption::before,
-figure.effect-honey:hover h2,
-figure.effect-honey:hover h2 i {
-  opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-
-.tm-container-gallery {
-	padding-top: 30px;
-	}
-
 /* Contact */
 
 #contact {
@@ -678,22 +585,3 @@ p {
   }
 }
 
-@media (max-width: 480px) {
-  .tm-gallery-container {
-    max-width: 220px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .tm-gallery-container-2 {
-    max-width: 350px;
-  }
-
-  .slick-dots li {
-    margin: 0 8px;
-  }
-
-  .tm-gallery-item {
-    margin: 0;
-  }
-}
