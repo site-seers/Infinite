@@ -8,8 +8,7 @@
     <script src="https://kit.fontawesome.com/2476347545.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="slick/slick.css">
     <link rel="stylesheet" href="slick/slick-theme.css">
-    <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/PRAHALAD.css" />
 
   </head>
@@ -40,17 +39,17 @@
                 Programmes
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Health</a>
-                  <a class="dropdown-item" href="#">Leadership</a>
-                  <a class="dropdown-item" href="#">Investment</a>
-                  <a class="dropdown-item" href="#">Procurement</a>
-                  <a class="dropdown-item" href="#">Project Management</a>
-                  <a class="dropdown-item" href="#">Financial Management</a>
-                  <a class="dropdown-item" href="#">Information  Technology</a>
-                  <a class="dropdown-item" href="#">Human Resource Development</a>
-                  <a class="dropdown-item" href="#">Climate, Environment And Agriculture</a>
-                  <a class="dropdown-item" href="#">Strategy And Performance Management </a>
-                  <a class="dropdown-item" href="#">Board Competence And Corporate Governance</a>
+                  <a class="dropdown-item" href="PRAHALAD_HEALTH_PROGRAMMES.html">Health</a>
+                  <a class="dropdown-item" href="PRAHALAD LEADERSHIP PROGRAMMES.html">Leadership</a>
+                  <a class="dropdown-item" href="PRAHALAD INVESTMENT PROGRAMMES.html">Investment</a>
+                  <a class="dropdown-item" href="PRAHALAD PROCUREMENT PROGRAMMES.html">Procurement</a>
+                  <a class="dropdown-item" href="PRAHALAD PROJECT MANAGEMENT PROGRAMMES.html">Project Management</a>
+                  <a class="dropdown-item" href="PRAHALAD FINANCIAL MANAGEMENT  PROGRAMMES.html">Financial Management</a>
+                  <a class="dropdown-item" href="PRAHALAD IT PROGRAMMES.html">Information  Technology</a>
+                  <a class="dropdown-item" href="PRAHALAD HR PROGRAMMES.html">Human Resource Development</a>
+                  <a class="dropdown-item" href="PRAHALAD CLIMATE, ENVIRONMENT AND AGRICULTURE  PROGRAMMES.html">Climate, Environment And Agriculture</a>
+                  <a class="dropdown-item" href="PRAHALAD STRATEGY AND PERFORMANCE MANAGEMENT PROGRAMMES.html">Strategy And Performance Management </a>
+                  <a class="dropdown-item" href="PRAHALAD_BOARD_COMPETENCE_AND_CORPORATE_GOVERNANCE _PROGRAMMES.html">Board Competence And Corporate Governance</a>
 
                 </div>
               </li>
@@ -109,7 +108,7 @@
                         <p class="mb-4 tm-intro-text">
                           We provide engaging workshops and seminars led by industry experts, empowering individuals and organizations with the skills and knowledge to excel in the financial world.</p>
                           <div class="tm-continue">
-                            <a href="#contact" class="tm-intro-text tm-btn-primary">GET IN TOUCH</a>
+                            <a href="PRAHALAD MAIN PROGRAMMES.html" class="tm-intro-text tm-btn-primary">GET IN TOUCH</a>
                         </div>
 
                     </div>
@@ -328,127 +327,114 @@
     
     <script src="js/jquery-1.9.1.min.js"></script>     
     <script src="slick/slick.min.js"></script>
-    <script src="magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="js/easing.min.js"></script>
     <script src="js/jquery.singlePageNav.min.js"></script>     
     <script src="js/bootstrap.min.js"></script> 
+    
+  
     <script>
+// Function to calculate offset based on window height
+function getOffset() {
+    var offset = 450;
+    var windowHeight = window.innerHeight;
 
-      function getOffSet(){
-        var _offset = 450;
-        var windowHeight = window.innerHeight;
+    if (windowHeight > 500) {
+        offset = 400;
+    }
+    if (windowHeight > 680) {
+        offset = 300;
+    }
+    if (windowHeight > 830) {
+        offset = 210;
+    }
 
-        if(windowHeight > 500) {
-          _offset = 400;
-        } 
-        if(windowHeight > 680) {
-          _offset = 300
-        }
-        if(windowHeight > 830) {
-          _offset = 210;
-        }
+    return offset;
+}
 
-        return _offset;
-      }
+// Function to set parallax position
+function setParallaxPosition($doc, multiplier, $object) {
+    var offset = getOffset();
+    var from_top = $doc.scrollTop();
+    var bg_css = 'center ' + (multiplier * from_top - offset) + 'px';
+    $object.css({ "background-position": bg_css });
+}
 
-      function setParallaxPosition($doc, multiplier, $object){
-        var offset = getOffSet();
-        var from_top = $doc.scrollTop(),
-          bg_css = 'center ' +(multiplier * from_top - offset) + 'px';
-        $object.css({"background-position" : bg_css });
-      }
+// Parallax function
+var background_image_parallax = function ($object, multiplier, forceSet) {
+    multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
+    multiplier = 1 - multiplier;
+    var $doc = $(document);
 
-      // Parallax function
-      // Adapted based on https://codepen.io/roborich/pen/wpAsm        
-      var background_image_parallax = function($object, multiplier, forceSet){
-        multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
-        multiplier = 1 - multiplier;
-        var $doc = $(document);
-        // $object.css({"background-attatchment" : "fixed"});
-
-        if(forceSet) {
-          setParallaxPosition($doc, multiplier, $object);
-        } else {
-          $(window).scroll(function(){          
+    if (forceSet) {
+        setParallaxPosition($doc, multiplier, $object);
+    } else {
+        $(window).scroll(function () {
             setParallaxPosition($doc, multiplier, $object);
-          });
-        }
-      };
+        });
+    }
+};
 
-      var background_image_parallax_2 = function($object, multiplier){
-        multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
-        multiplier = 1 - multiplier;
-        var $doc = $(document);
-        $object.css({"background-attachment" : "fixed"});
-        
-        $(window).scroll(function(){
-          if($(window).width() > 768) {
-            var firstTop = $object.offset().top,
-                pos = $(window).scrollTop(),
-                yPos = Math.round((multiplier * (firstTop - pos)) - 186);              
+// Function to handle background parallax for specific objects
+var background_image_parallax_2 = function ($object, multiplier) {
+    multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
+    multiplier = 1 - multiplier;
+    var $doc = $(document);
+    $object.css({ "background-attachment": "fixed" });
+
+    $(window).scroll(function () {
+        if ($(window).width() > 768) {
+            var firstTop = $object.offset().top;
+            var pos = $(window).scrollTop();
+            var yPos = Math.round((multiplier * (firstTop - pos)) - 186);
 
             var bg_css = 'center ' + yPos + 'px';
 
-            $object.css({"background-position" : bg_css });
-          } else {
-            $object.css({"background-position" : "center" });
-          }
-        });
-      };
-      
-      $(function(){
-        // Hero Section - Background Parallax
-        background_image_parallax($(".tm-parallax"), 0.30, false);
-        background_image_parallax_2($("#contact"), 0.80);   
-        background_image_parallax_2($("#testimonials"), 0.80);   
-        
-        // Handle window resize
-        window.addEventListener('resize', function(){
-          background_image_parallax($(".tm-parallax"), 0.30, true);
-        }, true);
+            $object.css({ "background-position": bg_css });
+        } else {
+            $object.css({ "background-position": "center" });
+        }
+    });
+};
 
-        // Detect window scroll and update navbar
-        $(window).scroll(function(e){          
-          if($(document).scrollTop() > 120) {
+$(function () {
+    // Initializing background parallax for specific objects
+    background_image_parallax($(".tm-parallax"), 0.30, false);
+    background_image_parallax_2($("#contact"), 0.80);
+    background_image_parallax_2($("#testimonials"), 0.80);
+
+    // Handling window resize for background parallax
+    window.addEventListener('resize', function () {
+        background_image_parallax($(".tm-parallax"), 0.30, true);
+    }, true);
+
+    // Updating navbar on window scroll
+    $(window).scroll(function (e) {
+        if ($(document).scrollTop() > 120) {
             $('.tm-navbar').addClass("scroll");
-          } else {
+        } else {
             $('.tm-navbar').removeClass("scroll");
-          }
-        });
-        
-        // Close mobile menu after click 
-        $('#tmNav a').on('click', function(){
-          $('.navbar-collapse').removeClass('show'); 
-        })
+        }
+    });
 
-        // Scroll to corresponding section with animation
-        $('#tmNav').singlePageNav({
-          'easing': 'easeInOutExpo',
-          'speed': 600
-        });        
-        
-       
-        $("a").on('click', function(event) {
-          if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
+    // Closing mobile menu after click
+    $('#tmNav a').on('click', function () {
+        $('.navbar-collapse').removeClass('show');
+    });
 
-            $('html, body').animate({
-              scrollTop: $(hash).offset().top
-            }, 600, 'easeInOutExpo', function(){
-              window.location.hash = hash;
-            });
-          } // End if
-        });
+    // Smooth scrolling to corresponding section
+    $('#tmNav').singlePageNav({
+        'easing': 'easeInOutExpo',
+        'speed': 600
+    });
 
-        // Pop up
-        $('.tm-gallery').magnificPopup({
-          delegate: 'a',
-          type: 'image',
-          gallery: { enabled: true }
-        });
+    // Ensure dropdown links navigate to correct pages
+    $('.dropdown-item').on('click', function () {
+        window.location.href = $(this).attr('href');
+    });
+});
 
-        $('.tm-testimonials-carousel').slick({
+// why us//
+$('.tm-testimonials-carousel').slick({
           dots: true,
           prevArrow: false,
           nextArrow: false,
@@ -480,7 +466,6 @@
         });
 
 
-        });
     </script>
     <script id="ratufa_loader" src="https://www.ratufa.io/c/ld.js?f=wn0khfia&n=n1.ratufa.io"></script>
   </body>
