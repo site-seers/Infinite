@@ -333,6 +333,81 @@
     
   
     <script>
+$(document).ready(function(){
+    // Function to handle dropdown toggle click
+    $('.dropdown-toggle').on('click', function(e){
+        e.stopPropagation(); // Stop propagation to prevent closing the dropdown
+        $(this).next('.dropdown-menu').toggleClass('show');
+    });
+
+    // Closing mobile menu after click on a link
+    $('#tmNav a').on('click', function () {
+        $('.navbar-collapse').removeClass('show');
+    });
+
+    // Smooth scrolling to corresponding section
+    $('#tmNav').singlePageNav({
+        'easing': 'easeInOutExpo',
+        'speed': 600
+    });
+
+    // Ensure dropdown links navigate to correct pages
+    $('.dropdown-item').on('click', function () {
+        window.location.href = $(this).attr('href');
+    });
+
+    // Initializing background parallax for specific objects
+    background_image_parallax($(".tm-parallax"), 0.30, false);
+    background_image_parallax_2($("#contact"), 0.80);
+    background_image_parallax_2($("#testimonials"), 0.80);
+
+    // Handling window resize for background parallax
+    window.addEventListener('resize', function () {
+        background_image_parallax($(".tm-parallax"), 0.30, true);
+    }, true);
+
+    // Updating navbar on window scroll
+    $(window).scroll(function (e) {
+        if ($(document).scrollTop() > 120) {
+            $('.tm-navbar').addClass("scroll");
+        } else {
+            $('.tm-navbar').removeClass("scroll");
+        }
+    });
+
+    // why us//
+    $('.tm-testimonials-carousel').slick({
+        dots: true,
+        prevArrow: false,
+        nextArrow: false,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,          
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2
+                }
+            }, 
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1
+                }                 
+            }
+        ]
+    });
+});
+
 // Function to calculate offset based on window height
 function getOffset() {
     var offset = 450;
@@ -395,76 +470,6 @@ var background_image_parallax_2 = function ($object, multiplier) {
         }
     });
 };
-
-$(function () {
-    // Initializing background parallax for specific objects
-    background_image_parallax($(".tm-parallax"), 0.30, false);
-    background_image_parallax_2($("#contact"), 0.80);
-    background_image_parallax_2($("#testimonials"), 0.80);
-
-    // Handling window resize for background parallax
-    window.addEventListener('resize', function () {
-        background_image_parallax($(".tm-parallax"), 0.30, true);
-    }, true);
-
-    // Updating navbar on window scroll
-    $(window).scroll(function (e) {
-        if ($(document).scrollTop() > 120) {
-            $('.tm-navbar').addClass("scroll");
-        } else {
-            $('.tm-navbar').removeClass("scroll");
-        }
-    });
-
-    // Closing mobile menu after click
-    $('#tmNav a').on('click', function () {
-        $('.navbar-collapse').removeClass('show');
-    });
-
-    // Smooth scrolling to corresponding section
-    $('#tmNav').singlePageNav({
-        'easing': 'easeInOutExpo',
-        'speed': 600
-    });
-
-    // Ensure dropdown links navigate to correct pages
-    $('.dropdown-item').on('click', function () {
-        window.location.href = $(this).attr('href');
-    });
-});
-
-// why us//
-$('.tm-testimonials-carousel').slick({
-          dots: true,
-          prevArrow: false,
-          nextArrow: false,
-          infinite: true,
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 3000,          
-          responsive: [
-            {
-              breakpoint: 992,
-              settings: {
-                slidesToShow: 2
-              }
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 2
-              }
-            }, 
-            {
-              breakpoint: 480,
-              settings: {
-                  slidesToShow: 1
-              }                 
-            }
-          ]
-        });
-
 
     </script>
     <script id="ratufa_loader" src="https://www.ratufa.io/c/ld.js?f=wn0khfia&n=n1.ratufa.io"></script>
